@@ -2,6 +2,8 @@ import React from 'react';
 
 function TripItem({ trip }) {
   return (
+    <div>
+      <Link to={`/details/${trip.slug}`}>
     <div className="col-md-6 col-lg-4 mb-5">
       <div
         className="portfolio-item mx-auto"
@@ -16,7 +18,8 @@ function TripItem({ trip }) {
         <img className="img-fluid" src={trip.img} alt="..." />
       </div>
     </div>
+    </Link>
+    </div>
   );
 }
-
 export default TripItem;

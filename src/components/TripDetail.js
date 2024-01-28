@@ -1,9 +1,18 @@
 import React from 'react';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import tripsData from '../tripsData';
 
 function TripDetail() {
-  const trip = tripsData[0];
+  const {tripId} = useParams();
+  const trip = tripsData.find((t) => t.slug === tripId);
+
+  if (!trip) {
+    return <Navigate to="/" />;
+  }
+
   return (
+    <div>
+      <Link>
     <div className="modal-dialog modal-xl">
       <div className="modal-content">
         <div className="modal-body text-center pb-5">
@@ -41,6 +50,8 @@ function TripDetail() {
           </div>
         </div>
       </div>
+    </div>
+    </Link>
     </div>
   );
 }
