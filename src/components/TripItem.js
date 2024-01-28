@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function TripItem({ trip }) {
   return (
     <div>
-      <Link to={`/details/${trip.slug}`}>
+      <Link to={`/trips/${trip.slug}`}>
     <div className="col-md-6 col-lg-4 mb-5">
       <div
         className="portfolio-item mx-auto"
